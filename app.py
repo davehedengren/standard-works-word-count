@@ -1,5 +1,5 @@
 """
-Streamlit web application for analyzing word/phrase frequencies in the Standard Works.
+Streamlit web application for analyzing word frequencies in the Standard Works.
 
 This application allows users to:
 - Search for specific words or phrases.
@@ -91,7 +91,7 @@ def get_search_results(search_term: str, data: dict, granularity: str, use_regex
     the selected granularity and search mode (exact or regex).
 
     Args:
-        search_term: The word/phrase or regex pattern to search for.
+        search_term: The word or regex pattern to search for.
         data: The loaded scripture data (dictionary from `load_data`).
         granularity: The level at which to aggregate results.
         use_regex: Boolean indicating whether to treat search_term as a regex pattern.
@@ -213,12 +213,12 @@ def get_search_results(search_term: str, data: dict, granularity: str, use_regex
 
 # --- Main Application Logic ---
 scripture_data = load_data(DATA_FILE)
-st.title("Standard Works Word/Phrase Frequency Analyzer")
+st.title("Standard Works Word Frequency Analyzer")
 
 if scripture_data:
     st.sidebar.header("Search Options")
     search_term_input = st.sidebar.text_input(
-        "Enter word/phrase or Regex pattern:", 
+        "Enter word or Regex pattern:", 
         value="faith",
         help="Enter a term. Behavior depends on search mode selections below."
     )
